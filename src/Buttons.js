@@ -7,13 +7,13 @@ function Buttons(props) {
       <div className="homeButtons">
         <button 
           className="homeButtons__touchdown"
-          onClick={() => props.setHomeScore(props.homeScore + 7)}
+          onClick={() => props.teamScore('home', 7)}
           >
           Home Touchdown
         </button>
         <button 
           className="homeButtons__fieldGoal"
-          onClick={() => props.setHomeScore(props.homeScore + 3)}
+          onClick={() => props.teamScore('home', 3)}
           >
           Home Field Goal
         </button>
@@ -21,13 +21,13 @@ function Buttons(props) {
       <div className="awayButtons">
         <button 
           className="awayButtons__touchdown"
-          onClick={() => props.setAwayScore(props.awayScore + 7)}
+          onClick={() => props.teamScore('away', 7)}
           >
           Away Touchdown
         </button>
         <button 
           className="awayButtons__fieldGoal"
-          onClick={() => props.setAwayScore(props.awayScore + 3)}
+          onClick={() => props.teamScore('away', 3)}
           >
           Away Field Goal
         </button>
