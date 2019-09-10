@@ -6,10 +6,17 @@ import BottomRow from "./BottomRow";
 import Buttons from './Buttons'
 
 
-function App() {
+function App(props) {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
+  const [quarter, setQuarter] = useState(1);
+
+  const onQuarterChange = () => {
+    setQuarter(quarter + 1)
+  }
+
+  const currentQuarter = quarter;
 
   const teamScore = (teamName, pointsScored) => {
     if (teamName === 'home') {
@@ -26,9 +33,14 @@ function App() {
           homeScore={homeScore}   
           awayScore={awayScore}
         />
-        <BottomRow />
+        <BottomRow
+          quarter={currentQuarter} 
+        />
       </section>
-    <Buttons teamScore={teamScore}/>
+      <Buttons 
+        teamScore={teamScore}
+        onQuarterChange={onQuarterChange}
+      />
     </div>
   );
 }

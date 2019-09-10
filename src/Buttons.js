@@ -1,7 +1,6 @@
 import React from 'react';
-import './App';
 
-function Buttons(props) {
+const Buttons = (props) => {
   return (
     <section className="buttons">
       <div className="homeButtons">
@@ -30,6 +29,12 @@ function Buttons(props) {
           onClick={() => props.teamScore('away', 3)}
           >
           Away Field Goal
+        </button>
+        <button 
+        className="button"
+        onClick={() => props.onQuarterChange()}
+        >
+        Next Quarter
         </button>
       </div>
     </section>
